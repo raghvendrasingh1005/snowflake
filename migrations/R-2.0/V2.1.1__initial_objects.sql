@@ -5,4 +5,4 @@ CREATE TABLE HELLO_WORLD
   ,LAST_NAME VARCHAR
 );*/
 
-insert into HELLO_WORLD values('Raj', 'Kumar', 25);
+insert into POC.HELLO_WORLD values('Raj', 'Kumar', 25);
