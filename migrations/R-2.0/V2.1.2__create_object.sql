@@ -3,6 +3,6 @@ CREATE TABLE STUDENT
 (
    FIRST_NAME VARCHAR
   ,LAST_NAME VARCHAR
-);*/
+);
 
 insert into POC.HELLO_WORLD values('Ashok', 'Kumar', 40);
