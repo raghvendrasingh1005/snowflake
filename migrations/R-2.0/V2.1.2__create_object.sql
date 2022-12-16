@@ -7,4 +7,4 @@ CREATE TABLE POC.STUDENT
 
 insert into POC.HELLO_WORLD values('Ashok', 'Kumar', 40);
 
-CREATE SCHEMA POC;
+--CREATE SCHEMA POC;
