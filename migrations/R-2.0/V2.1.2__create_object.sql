@@ -5,6 +5,6 @@ CREATE TABLE POC.STUDENT
   ,LAST_NAME VARCHAR
 );
 
-insert into POC.HELLO_WORLD values('Ashok', 'Kumar', 40);
+--insert into POC.HELLO_WORLD values('Ashok', 'Kumar', 40);
 
 --CREATE SCHEMA POC;
