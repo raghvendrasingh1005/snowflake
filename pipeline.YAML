@@ -12,11 +12,11 @@ pool:
   vmImage: 'ubuntu-latest'
 #variables:
 #- group: demo-variables
-#steps:
-#- task: UsePythonVersion@0
-#  displayName: 'Use Python 3.8.x'
-#  inputs:
-#    versionSpec: '3.8.x'
+steps:
+- task: UsePythonVersion@0
+  displayName: 'Use Python 3.8.x'
+  inputs:
+    versionSpec: '3.8.x'
 
 stages:
 - stage: DEVELOPMENT
@@ -33,10 +33,10 @@ stages:
       runOnce:
         deploy:
           steps:
-          - task: UsePythonVersion@0
-            displayName: 'Use Python 3.8.x'
-            inputs:
-              versionSpec: '3.8.x'
+          #- task: UsePythonVersion@0
+          #  displayName: 'Use Python 3.8.x'
+          #  inputs:
+          #    versionSpec: '3.8.x'
           - task: Bash@3
             inputs:
               targetType: 'inline'
