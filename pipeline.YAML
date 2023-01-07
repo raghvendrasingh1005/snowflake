@@ -22,7 +22,7 @@ stages:
 - stage: DEV
   variables:
       - group: demo-variables
-        environmet: DEV
+        environment: DEV
   jobs:
   - job: UsePythonVersion@0
     displayName: 'Use Python 3.8.x'
