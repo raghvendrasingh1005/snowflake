@@ -20,30 +20,17 @@ steps:
 
 stages:
 - stage: DEV
-  - jobs: Bash@3
-    inputs:
-      variables:
+  variables:
       - group: demo-variables
-      targetType: 'inline'
       Environmnet: DEV
-      script: |
-        echo 'Starting bash task'
-        echo "PROJECT_FOLDER $(PROJECT_FOLDER)"
-        python --version
-        echo 'Step 1: Installing schemachange'
-        pip install schemachange --upgrade
-        echo 'Step 2: Running schemachange'
-        schemachange -f $(PROJECT_FOLDER)/migrations -a $(SF_ACCOUNT) -u $(SF_USERNAME) -r $(SF_ROLE) -w $(SF_WAREHOUSE) -d $(SF_DATABASE) -c $(SF_DATABASE).SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
-    env:
-      SNOWFLAKE_PASSWORD: $(SF_PASSWORD)
-
-- stage: UAT
-  - jobs: Bash@3
+  jobs:
+  - job: UsePythonVersion@0
+    displayName: 'Use Python 3.8.x'
     inputs:
-      variables:
-      - group: demo-variables
-      targetType: 'inline'
-      Environmnet: UAT
+      versionSpec: '3.8.x'
+  - job: Bash@3
+    inputs:      
+      targetType: 'inline'      
       script: |
         echo 'Starting bash task'
         echo "PROJECT_FOLDER $(PROJECT_FOLDER)"
