@@ -30,7 +30,7 @@ stages:
     variables:
     - group: demo-variables
     strategy:
-      runonce:
+      runOnce:
         deploy:
           steps:
           - task: UsePythonVersion@0
