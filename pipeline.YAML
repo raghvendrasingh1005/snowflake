@@ -19,7 +19,7 @@ pool:
 #    versionSpec: '3.8.x'
 
 stages:
-- stage: DEVELOPMENT Stage
+- stage: DEVELOPMENT
   displayName: DEVELOPMENT
   #condition: eq(variables['Build.SourceBranch'], 'refs/heads/development')
   
