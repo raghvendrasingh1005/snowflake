@@ -20,7 +20,7 @@ steps:
 
 stages:
 - stage: DEV
-  - task: Bash@3
+  - jobs: Bash@3
     inputs:
       variables:
       - group: demo-variables
@@ -38,7 +38,7 @@ stages:
       SNOWFLAKE_PASSWORD: $(SF_PASSWORD)
 
 - stage: UAT
-  - task: Bash@3
+  - jobs: Bash@3
     inputs:
       variables:
       - group: demo-variables
