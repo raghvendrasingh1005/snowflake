@@ -34,7 +34,7 @@ stages:
         deploy:
           steps:
             - checkout: self
-             clean: true
+              clean: true
 
             - task: UsePythonVersion@0
               displayName: 'Use Python 3.8.x'
