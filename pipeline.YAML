@@ -24,9 +24,20 @@ steps:
       echo 'Starting bash task'
       echo "PROJECT_FOLDER $(PROJECT_FOLDER)"
       python --version
-      echo 'Step 1: Installing schemachange'
-      pip install schemachange --upgrade
-      echo 'Step 2: Running schemachange'
-      schemachange -f $(PROJECT_FOLDER)/migrations -a $(SF_ACCOUNT) -u $(SF_USERNAME) -r $(SF_ROLE) -w $(SF_WAREHOUSE) -d $(SF_DATABASE) -c $(SF_DATABASE).SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
+      #echo 'Step 1: Installing schemachange'
+      #pip install schemachange --upgrade
+      #echo 'Step 2: Running schemachange'
+      #schemachange -f $(PROJECT_FOLDER)/migrations -a $(SF_ACCOUNT) -u $(SF_USERNAME) -r $(SF_ROLE) -w $(SF_WAREHOUSE) -d $(SF_DATABASE) -c $(SF_DATABASE).SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
+      
+      echo ‘Step 1: installing snowsql’
+      curl -O https://sfc-repo.snowflakecomputing.com/snowsql/bootstrap/1.2/linux_x86_64/snowsql-1.2.9-linux_x86_64.bash
+      SNOWSQL_DEST=~/snowflake SNOWSQL_LOGIN_SHELL=~/.profile bash snowsql-1.2.9-linux_x86_64.bash
+
+      echo ‘Test installation’
+      ~/snowflake/snowsql -v
+
+      echo ‘run the code file’
+      ~/snowflake/snowsql -f $(PROJECT_FOLDER)/Migrations/file1.sql -f
+      $(PROJECT_FOLDER)/Migrations/file2.sql -a $(SF_ACCOUNT) -u $(SF_USERNAME) -r $(SF_ROLE) -w $(SF_WAREHOUSE) -d $(SF_DATABASE)
   env:
     SNOWFLAKE_PASSWORD: $(SF_PASSWORD)
