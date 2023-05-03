@@ -40,7 +40,7 @@ steps:
       #~/snowflake/snowsql -f $(PROJECT_FOLDER)/migrations/V1.1.1__initial_objects.sql -f
       #$(PROJECT_FOLDER)/migrations/V1.1.2__updated_objects.sql -a $(SF_ACCOUNT) -u $(SF_USERNAME) -r $(SF_ROLE) -w $(SF_WAREHOUSE) -d $(SF_DATABASE)
       #~/snowflake/snowsql -f $(PROJECT_FOLDER)/migrations/V1.1.1__initial_objects.sql -a $(SF_ACCOUNT) -u $(SF_USERNAME) -r $(SF_ROLE) -w $(SF_WAREHOUSE) -d $(SF_DATABASE)
-      ~/snowflake/snowsql -f $(PROJECT_FOLDER)/migrations/test.sql -a $(SF_ACCOUNT) -u $(SF_USERNAME) -r $(SF_ROLE) -w $(SF_WAREHOUSE) -d $(SF_DATABASE)
+      ~/snowflake/snowsql -f $(PROJECT_FOLDER)/migrations/EXECUTION.sql -a $(SF_ACCOUNT) -u $(SF_USERNAME) -r $(SF_ROLE) -w $(SF_WAREHOUSE) -d $(SF_DATABASE)
   env:
     #SNOWFLAKE_PASSWORD: $(SF_PASSWORD)
     SNOWSQL_PWD: $(SF_PASSWORD)
