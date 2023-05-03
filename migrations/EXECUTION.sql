@@ -3,7 +3,9 @@
 
 !source migrations/Tables/PARTY.sql;
 !source migrations/Tables/MAPPING.sql;
-!source migrations/Tables/ACCOUNT.sql;
+!source migrations/Tables/ACCOUNT.sql;git 
+
+git push
 
 !source migrations/Views/vwPARTY.sql;
 
