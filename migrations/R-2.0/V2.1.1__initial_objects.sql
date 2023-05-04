@@ -1,8 +1,0 @@
-/*CREATE SCHEMA POC;
-CREATE TABLE HELLO_WORLD
-(
-   FIRST_NAME VARCHAR
-  ,LAST_NAME VARCHAR
-);*/
-
-insert into POC.HELLO_WORLD values('Raj', 'Kumar', 25);
