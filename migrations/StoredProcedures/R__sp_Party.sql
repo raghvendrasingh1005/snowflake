@@ -1,6 +1,6 @@
 USE SCHEMA POC;
 
-create procedure sp_Party(from_table string, to_table string, count int)
+create or replace procedure sp_Party(from_table string, to_table string, count int)
   returns string
   language python
   runtime_version = '3.8'
