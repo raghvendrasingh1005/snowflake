@@ -8,6 +8,8 @@
 --!source migrations/Tables/CUSTOMER.sql
 --!source migrations/Views/vwCUSTOMER.sql;
 --!source migrations/StoredProcedures/SP_CUSTOMER.sql;
+!source migrations/Tables/SCRIPTLOG.sql
+!source migrations/StoredProcedures/SP_SCRIPTLOG.sql;
 !source migrations/Tables/USER.sql
 
 
